@@ -1,0 +1,77 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Mainframe = Instance.new("Frame")
+local bar = Instance.new("Frame")
+local message = Instance.new("TextBox")
+local Texter = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Mainframe.Name = "Mainframe"
+Mainframe.Parent = ScreenGui
+Mainframe.AnchorPoint = Vector2.new(0.5, 0.5)
+Mainframe.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+Mainframe.BorderColor3 = Color3.fromRGB(53, 53, 53)
+Mainframe.Position = UDim2.new(0.5, 0, 0.5, 0)
+Mainframe.Size = UDim2.new(0, 261, 0, 144)
+
+bar.Name = "bar"
+bar.Parent = Mainframe
+bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bar.BorderColor3 = Color3.fromRGB(255, 255, 255)
+bar.Position = UDim2.new(0.0662565827, 0, 0.180555552, 0)
+bar.Size = UDim2.new(0, 226, 0, 0)
+
+message.Name = "message"
+message.Parent = Mainframe
+message.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+message.BorderColor3 = Color3.fromRGB(57, 57, 57)
+message.Position = UDim2.new(0.234150499, 0, 0, 0)
+message.Size = UDim2.new(0, 139, 0, 19)
+message.Font = Enum.Font.SourceSans
+message.Text = "Message"
+message.TextColor3 = Color3.fromRGB(255, 255, 255)
+message.TextSize = 19.000
+
+Texter.Name = "Texter"
+Texter.Parent = Mainframe
+Texter.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+Texter.BorderColor3 = Color3.fromRGB(57, 57, 57)
+Texter.Position = UDim2.new(0.109375, 0, 0.256944448, 0)
+Texter.Size = UDim2.new(0, 200, 0, 53)
+Texter.Font = Enum.Font.SourceSans
+Texter.Text = "Please enjoy the scripts I made."
+Texter.TextColor3 = Color3.fromRGB(255, 255, 255)
+Texter.TextSize = 18.000
+
+Close.Name = "Close"
+Close.Parent = Mainframe
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.Position = UDim2.new(0.109375, 0, 0.701388896, 0)
+Close.Size = UDim2.new(0, 200, 0, 29)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "Close"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 14.000
+
+UICorner.Parent = Close
+
+-- Scripts:
+
+local function PWOPH_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function(click)
+		script.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(PWOPH_fake_script)()
